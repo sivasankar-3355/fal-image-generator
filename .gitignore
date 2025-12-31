@@ -1,0 +1,6 @@
+.env
+backend/node_modules
+backend/google-storage-key.json
+backend/.vscode
+backend/images
+backend/dist
