@@ -1,6 +1,47 @@
+# General
+.DS_Store
 .env
-backend/node_modules
+
+# IntelliJ / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build Outputs
+dist/
+out-tsc/
+bazel-out/
+coverage/
+tmp/
+
+# Backend Specific
 backend/google-storage-key.json
-backend/.vscode
 backend/images
-backend/dist
+
+# Frontend Specific
+.angular/cache
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
+__screenshots__/
+
+# Miscellaneous
+.history/
+.sass-cache/
+Thumbs.db
