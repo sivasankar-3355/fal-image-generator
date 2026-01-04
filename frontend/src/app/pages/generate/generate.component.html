@@ -1,0 +1,42 @@
+<div class="flex flex-column gap-5">
+    <div class="flex justify-content-center">
+        <p-card header="Generate Image" [style]="{ width: '800px', maxWidth: '100%' }">
+            <div class="flex flex-column gap-3">
+                <div class="flex flex-column gap-2">
+                    <label for="character" class="font-bold">Select Character Model</label>
+                    <p-select [options]="characters" [(ngModel)]="selectedCharacter" optionLabel="name"
+                        optionValue="_id" placeholder="Select a Character" [style]="{'width':'100%'}"
+                        [disabled]="loadingCharacters">
+                    </p-select>
+                </div>
+
+                <div class="flex flex-column gap-2">
+                    <label for="prompt" class="font-bold">Prompt</label>
+                    <textarea pTextarea id="prompt" [(ngModel)]="prompt" rows="5"
+                        placeholder="Describe the image you want to generate..." class="w-full">
+                        </textarea>
+                </div>
+
+                <div class="flex justify-content-end mt-2">
+                    <p-button label="Generate" icon="pi pi-sparkles" (onClick)="generate()" [loading]="generating"
+                        [disabled]="!selectedCharacter || !prompt">
+                    </p-button>
+                </div>
+            </div>
+        </p-card>
+    </div>
+
+    <div *ngIf="generatedImageUrls.length > 0" class="flex justify-content-center flex-wrap gap-4">
+        <p-card *ngFor="let img of generatedImageUrls" class="w-full md:w-5">
+            <p-image [src]="img" alt="Generated Image" width="100%" [preview]="true">
+            </p-image>
+        </p-card>
+    </div>
+
+    <div *ngIf="generating" class="flex justify-content-center flex-column align-items-center mt-5">
+        <p-progressSpinner></p-progressSpinner>
+        <p class="mt-3 text-xl font-medium text-500">Generating magic... please wait.</p>
+    </div>
+
+    <p-toast></p-toast>
+</div>

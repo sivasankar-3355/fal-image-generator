@@ -136,6 +136,7 @@ app.post('/post-training-callback', async (req, res) => {
     }
 })
 
+// poll from frontend
 app.get('/check-training-status', async (req, res) => {
     try {
         const { characterId } = req.query
@@ -165,6 +166,24 @@ app.get('/check-training-status', async (req, res) => {
         console.error(error)
         res.status(500).json({
             msg: 'training status check failed'
+        })
+    }
+})
+
+app.get('/characters', async (req, res) => {
+    try {
+        const characters = await CharacterModel.find({}, { _id: 1, name: 1 })
+        res.status(200).json({
+            msg: 'characters fetched',
+            data: {
+                characters
+            }
+        })
+    } catch (error) {
+        console.error(`An error occurred at ${req.path}`)
+        console.error(error)
+        res.status(500).json({
+            msg: 'fetching characters failed'
         })
     }
 })
@@ -251,6 +270,7 @@ app.post('/post-inference-callback', async (req, res) => {
     }
 })
 
+// poll from frontend
 app.get('/check-inference-status', async (req, res) => {
     try {
         const { inferenceId } = req.query

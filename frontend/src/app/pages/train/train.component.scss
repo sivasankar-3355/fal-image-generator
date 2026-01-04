@@ -1,0 +1,36 @@
+.train-outer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .train-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .input-container {
+            width: 50%;
+            display: flex;
+            gap: 20px;
+            height: 40px;
+            align-items: center;
+
+            .input-radio {
+                display: flex;
+                gap: 15px;
+
+                .inner-input-radio {
+                    display: flex;
+                    gap: 5px;
+                }
+            }
+        }
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+    }
+}

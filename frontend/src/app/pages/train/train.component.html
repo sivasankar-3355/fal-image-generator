@@ -1,0 +1,66 @@
+<div class="train-outer-container">
+    <p-card [style]="{ backgroundColor: '#1e1e1e', width: '50%' }">
+        <div class="train-container">
+            <div class="input-container">
+                <p>Name:</p>
+                <input type="text" pInputText />
+            </div>
+
+            <div class="input-container">
+                <p>Gender:</p>
+                <div class="input-radio">
+                    <div class="inner-input-radio">
+                        <p-radiobutton name="gender" value="Male" inputId="male" />
+                        <label for="male" class="ml-2">Male</label>
+                    </div>
+                    <div class="inner-input-radio">
+                        <p-radiobutton name="gender" value="Female" inputId="female" />
+                        <label for="female" class="ml-2">Female</label>
+                    </div>
+                    <div class="inner-input-radio">
+                        <p-radiobutton name="gender" value="Other" inputId="other" />
+                        <label for="other" class="ml-2">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <p>Age:</p>
+                <p-inputnumber inputId="integeronly" />
+            </div>
+
+            <div class="input-container">
+                <p>Ethinicity:</p>
+                <p-select [options]="ethinities" optionLabel="name" placeholder="Select a ethinicity"
+                    class="w-full md:w-56" />
+            </div>
+
+            <div class="input-container">
+                <p>Eye Color:</p>
+                <p-select [options]="eyeColors" optionLabel="name" placeholder="Select a eye color"
+                    class="w-full md:w-56" />
+            </div>
+
+            <div class="input-container">
+                <p>Is Bald:</p>
+                <div class="input-radio">
+                    <div class="inner-input-radio">
+                        <p-radiobutton name="isBald" value="true" inputId="true" />
+                        <label for="true" class="ml-2">Yes</label>
+                    </div>
+                    <div class="inner-input-radio">
+                        <p-radiobutton name="isBald" value="false" inputId="false" />
+                        <label for="false" class="ml-2">No</label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <ng-template #footer>
+            <div class="footer-container">
+                <p-button label="Train" class="w-full" styleClass="w-full" icon="pi pi-cog" />
+            </div>
+        </ng-template>
+
+    </p-card>
+</div>

@@ -1,0 +1,10 @@
+.home-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+    .header-img {
+        width: 20rem;
+        height: 200px;
+    }
+}
